@@ -27,4 +27,14 @@ describe('ProductController', () => {
     expect(controller).toBeDefined();
   });
 
+
+  describe('getProducts', () => {
+    it('should return products', async () => {
+      const result = [];
+      jest.spyOn(service, 'getProducts').mockImplementation(() => result);
+
+      expect(await controller.getProducts()).toBe(result);
+    });
+  });
+
 });
